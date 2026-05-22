@@ -398,6 +398,87 @@ export default function PortfolioLandingPage() {
 
         </div>
       </section>
+      {/* MERN Expertise */}
+<section id="services" className="max-w-7xl mx-auto px-6 py-28 text-center">
+
+  <p className="text-green-500 uppercase tracking-[4px] text-sm mb-4">
+    What I Do
+  </p>
+
+  <h2 className="text-5xl font-black mb-12">
+    MERN Stack <span className="text-green-500">Expertise</span>
+  </h2>
+
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+
+    {/* Frontend */}
+    <div className="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-green-500 transition">
+      <h3 className="text-xl font-bold text-green-400 mb-3">
+        Frontend Development
+      </h3>
+      <p className="text-white/60 text-sm leading-relaxed">
+        Building responsive, fast and modern UI using React.js, Tailwind CSS and Framer Motion.
+        Focus on clean design, reusable components and smooth user experience.
+      </p>
+    </div>
+
+    {/* Backend */}
+    <div className="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-green-500 transition">
+      <h3 className="text-xl font-bold text-green-400 mb-3">
+        Backend Development
+      </h3>
+      <p className="text-white/60 text-sm leading-relaxed">
+        Creating secure and scalable REST APIs using Node.js, Express.js with authentication,
+        middleware and proper MVC architecture.
+      </p>
+    </div>
+
+    {/* Database */}
+    <div className="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-green-500 transition">
+      <h3 className="text-xl font-bold text-green-400 mb-3">
+        Database Management
+      </h3>
+      <p className="text-white/60 text-sm leading-relaxed">
+        Working with MongoDB and Mongoose for schema design, data modeling,
+        aggregation and optimized database queries.
+      </p>
+    </div>
+
+    {/* Full Stack */}
+    <div className="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-green-500 transition">
+      <h3 className="text-xl font-bold text-green-400 mb-3">
+        Full Stack Applications
+      </h3>
+      <p className="text-white/60 text-sm leading-relaxed">
+        End-to-end MERN applications with authentication, CRUD systems,
+        dashboards, APIs integration and deployment on Vercel/Netlify.
+      </p>
+    </div>
+
+    {/* API Integration */}
+    <div className="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-green-500 transition">
+      <h3 className="text-xl font-bold text-green-400 mb-3">
+        API Integration
+      </h3>
+      <p className="text-white/60 text-sm leading-relaxed">
+        Integrating third-party APIs, handling requests, error handling and building
+        scalable data-driven applications.
+      </p>
+    </div>
+
+    {/* Deployment */}
+    <div className="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-green-500 transition">
+      <h3 className="text-xl font-bold text-green-400 mb-3">
+        Deployment & Hosting
+      </h3>
+      <p className="text-white/60 text-sm leading-relaxed">
+        Deploying projects on Vercel, Netlify, and AWS with environment variables,
+        performance optimization and CI/CD basics.
+      </p>
+    </div>
+
+  </div>
+</section>
 
       {/* Contact */}
       <section id="contact" className="relative py-32 text-center px-6">
