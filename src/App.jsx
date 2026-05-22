@@ -1,10 +1,131 @@
-
 import food from './assets/food.png'
 import goods from './assets/goods.png'
 import blogify from './assets/blogify.png'
 import mypic from './assets/mypic.jpeg'
 
+import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import emailjs from '@emailjs/browser'
+
+import {
+  FaReact,
+  FaNodeJs,
+  FaGithub,
+  FaAws,
+  FaLinkedin,
+} from 'react-icons/fa'
+
+import {
+  SiMongodb,
+  SiExpress,
+  SiTailwindcss,
+  SiFirebase,
+  SiJavascript,
+} from 'react-icons/si'
+
 export default function PortfolioLandingPage() {
+
+  const form = useRef()
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    emailjs
+      .sendForm(
+        'service_vn68tbq',
+        'template_7h2s4h1',
+        form.current,
+        'CfK4g_CABeHOuxk02'
+      )
+      .then(
+        () => {
+          alert('Message Sent Successfully!')
+        },
+        (error) => {
+          alert('Failed To Send Message')
+          console.log(error.text)
+        }
+      )
+
+    e.target.reset()
+  }
+
+  const projects = [
+    {
+      title: 'Blogify App',
+      image: blogify,
+      link: 'https://blog-delta-three-63.vercel.app/',
+      github: 'https://github.com/Ahmadraza49',
+      desc: 'Full-stack MERN blogging platform with authentication and CRUD operations.',
+      tech: ['React', 'MongoDB', 'Node.js', 'Express.js'],
+    },
+
+    {
+      title: 'Business App',
+      image: goods,
+      link: 'https://ch-goods.vercel.app/',
+      github: 'https://github.com/Ahmadraza49',
+      desc: 'Modern transportation website focused on business growth.',
+      tech: ['React', 'Tailwind'],
+    },
+
+    {
+      title: 'Food App',
+      image: food,
+      link: 'https://food-delivery-app-eosin-seven.vercel.app/',
+      github: 'https://github.com/Ahmadraza49',
+      desc: 'Modern food delivery frontend with responsive UI.',
+      tech: ['React', 'JavaScript', 'Tailwind CSS'],
+    },
+  ]
+
+  const techStack = [
+    {
+      name: 'React',
+      icon: <FaReact />,
+    },
+
+    {
+      name: 'Node.js',
+      icon: <FaNodeJs />,
+    },
+
+    {
+      name: 'MongoDB',
+      icon: <SiMongodb />,
+    },
+
+    {
+      name: 'Express.js',
+      icon: <SiExpress />,
+    },
+
+    {
+      name: 'Tailwind CSS',
+      icon: <SiTailwindcss />,
+    },
+
+    {
+      name: 'JavaScript',
+      icon: <SiJavascript />,
+    },
+
+    {
+      name: 'Firebase',
+      icon: <SiFirebase />,
+    },
+
+    {
+      name: 'GitHub',
+      icon: <FaGithub />,
+    },
+
+    {
+      name: 'AWS',
+      icon: <FaAws />,
+    },
+  ]
+
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden font-sans">
 
@@ -15,9 +136,11 @@ export default function PortfolioLandingPage() {
 
       {/* Navbar */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-black/60 border-b border-white/10">
+
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
           <div className="flex items-center gap-3">
+
             <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-black font-bold">
               AR
             </div>
@@ -25,9 +148,11 @@ export default function PortfolioLandingPage() {
             <h1 className="text-lg font-semibold">
               Ahmad Raza
             </h1>
+
           </div>
 
           <nav className="hidden md:flex gap-8 text-sm text-white/70">
+
             <a href="#work" className="hover:text-green-400 transition">
               Work
             </a>
@@ -47,6 +172,7 @@ export default function PortfolioLandingPage() {
             <a href="#contact" className="hover:text-green-400 transition">
               Contact
             </a>
+
           </nav>
 
           <a
@@ -57,6 +183,7 @@ export default function PortfolioLandingPage() {
           >
             Hire Me
           </a>
+
         </div>
       </header>
 
@@ -66,7 +193,13 @@ export default function PortfolioLandingPage() {
         {/* Left */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
 
-          <div className="relative group">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative group"
+          >
+
             <div className="absolute inset-0 bg-green-500 blur-3xl opacity-30 rounded-full animate-pulse"></div>
 
             <img
@@ -74,10 +207,11 @@ export default function PortfolioLandingPage() {
               alt="profile"
               className="relative w-72 h-72 rounded-full object-cover border-4 border-green-500 shadow-[0_0_40px_rgba(34,197,94,0.7)] hover:scale-105 transition duration-500"
             />
-          </div>
+
+          </motion.div>
 
           <p className="mt-8 text-white/60">
-            Let's Grow Your Business
+            Let’s Build Something Amazing Together
           </p>
 
           <a
@@ -91,6 +225,7 @@ export default function PortfolioLandingPage() {
 
           {/* Badges */}
           <div className="flex flex-wrap gap-3 mt-6 justify-center lg:justify-start">
+
             {[
               'Responsive Design',
               'Clean Code',
@@ -103,6 +238,7 @@ export default function PortfolioLandingPage() {
                 {item}
               </span>
             ))}
+
           </div>
         </div>
 
@@ -116,112 +252,35 @@ export default function PortfolioLandingPage() {
           <div className="border border-green-500 rounded-3xl p-8 bg-white/5 backdrop-blur-md shadow-[0_0_50px_rgba(34,197,94,0.2)] hover:shadow-[0_0_80px_rgba(34,197,94,0.4)] transition duration-500">
 
             <h2 className="text-4xl md:text-6xl font-black leading-[1.1]">
-              Transforming <span className="text-green-500">Businesses</span>
+
+              Building Fast &
               <br />
-              Through Modern
+
+              <span className="text-green-500">
+                Scalable Web
+              </span>
+
               <br />
-              <span className="text-green-500">Websites</span> That Build
-              <span className="text-green-500"> Trust</span>
+
+              Applications With
               <br />
-              & Drive Growth
+
+              Clean UI &
+              <span className="text-green-500">
+                Powerful Backend
+              </span>
+
             </h2>
+
+            <p className="text-white/60 mt-6 text-lg leading-relaxed max-w-xl">
+
+              MERN Stack Developer specializing in responsive frontend,
+              scalable backend systems, REST APIs, and modern web experiences.
+
+            </p>
+
           </div>
 
-          {/* Tags */}
-          <div className="flex flex-wrap gap-4 mt-8 text-sm text-white/70">
-            <span>MERN Stack Developer</span>
-            <span>AWS</span>
-            <span>MongoDB</span>
-            <span>REST APIs</span>
-          </div>
-
-          {/* Buttons */}
-          <div className="flex gap-4 mt-8 flex-wrap">
-
-            <a
-              href="#work"
-              className="bg-green-500 text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition duration-300 inline-block"
-            >
-              View My Work
-            </a>
-
-            <a
-              href="https://wa.me/923157571254"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/20 px-6 py-3 rounded-full hover:border-green-500 hover:text-green-400 transition duration-300 inline-block"
-            >
-              Let's Talk
-            </a>
-          </div>
-
-          {/* Social Buttons */}
-          <div className="flex gap-4 mt-6 flex-wrap">
-
-            <a
-              href="https://github.com/Ahmadraza49"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/20 px-5 py-2 rounded-full hover:border-green-500 hover:text-green-400 transition duration-300"
-            >
-              GitHub
-            </a>
-
-            <a
-              href="https://linkedin.com/in/ahmad-raza-883176334"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/20 px-5 py-2 rounded-full hover:border-green-500 hover:text-green-400 transition duration-300"
-            >
-              LinkedIn
-            </a>
-
-            <a
-             href="/Ahmadraza--cv.pdf"
-              download
-              className="border border-white/20 px-5 py-2 rounded-full hover:border-green-500 hover:text-green-400 transition duration-300"
-            >
-              Download CV
-            </a>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-5 mt-10 max-w-lg">
-            {[
-              { number: '1+', label: 'Years Experience' },
-              { number: '8+', label: 'Projects Completed' },
-              { number: '100%', label: 'Client Focused' },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white/5 border border-white/10 rounded-2xl p-5 text-center hover:border-green-500 transition duration-300"
-              >
-                <h3 className="text-3xl font-bold text-green-500">
-                  {item.number}
-                </h3>
-
-                <p className="text-white/60 mt-2 text-sm">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Marquee */}
-      <section className="border-y border-white/10 py-6 overflow-hidden">
-        <div className="whitespace-nowrap animate-[scroll_20s_linear_infinite] text-3xl font-bold text-white/70 flex gap-16 px-10">
-          <span>React ✦</span>
-          <span>Node.js ✦</span>
-          <span>MongoDB ✦</span>
-          <span>AWS ✦</span>
-          <span>TypeScript ✦</span>
-          <span>Next.js ✦</span>
-          <span>REST APIs ✦</span>
-          <span>React ✦</span>
-          <span>Node.js ✦</span>
-          <span>MongoDB ✦</span>
         </div>
       </section>
 
@@ -238,49 +297,24 @@ export default function PortfolioLandingPage() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          {[
-            {
-              title: 'Blogify App',
-              image: blogify,
-              link: 'https://blog-delta-three-63.vercel.app/',
-              desc: 'Full-stack MERN blogging platform with authentication and CRUD operations.',
-              tech: ['React', 'MongoDB', 'Node.js', 'Express.js'],
-            },
+          {projects.map((project, index) => (
 
-            {
-              title: 'Business App',
-              image: goods,
-              link: 'https://ch-goods.vercel.app/',
-              desc: 'Modern transportation website focused on business growth.',
-              tech: ['React', 'Tailwind'],
-            },
-
-            {
-              title: 'Food App',
-              image: food,
-              link: 'https://food-delivery-app-eosin-seven.vercel.app/',
-              desc: 'Modern food delivery frontend with responsive UI.',
-              tech: ['React', 'javaScript', 'Tailwind CSS'],
-            },
-
-          ].map((project, index) => (
-            <a
+            <div
               key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-[#0f0f0f] border border-white/10 rounded-3xl overflow-hidden hover:border-green-500 hover:-translate-y-3 hover:shadow-[0_0_60px_rgba(34,197,94,0.3)] transition duration-500 block"
+              className="group bg-[#0f0f0f] border border-white/10 rounded-3xl overflow-hidden hover:border-green-500 hover:-translate-y-3 hover:shadow-[0_0_60px_rgba(34,197,94,0.3)] transition duration-500 flex flex-col h-full"
             >
 
               <div className="overflow-hidden">
+
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-64 object-cover group-hover:scale-110 transition duration-700"
                 />
+
               </div>
 
-              <div className="p-6">
+              <div className="p-6 flex-1 flex flex-col">
 
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-green-400 transition">
                   {project.title}
@@ -290,8 +324,8 @@ export default function PortfolioLandingPage() {
                   {project.desc}
                 </p>
 
-                {/* Tags */}
                 <div className="flex gap-2 mt-4 flex-wrap">
+
                   {project.tech.map((item, i) => (
                     <span
                       key={i}
@@ -300,128 +334,40 @@ export default function PortfolioLandingPage() {
                       {item}
                     </span>
                   ))}
+
                 </div>
 
-                <div className="mt-5 inline-flex items-center gap-2 text-green-400 font-semibold">
-                  View Live Project →
+                <div className="mt-auto pt-6 flex gap-4">
+
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-400 font-semibold"
+                  >
+                    Live Demo →
+                  </a>
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/60 hover:text-green-400 transition"
+                  >
+                    GitHub
+                  </a>
+
                 </div>
               </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
-
-        <div className="relative">
-          <div className="absolute inset-0 bg-green-500/20 blur-[100px] rounded-full"></div>
-
-          <img
-            src={mypic}
-            alt="about"
-            className="relative w-[350px] h-[450px] object-cover rounded-3xl border border-green-500 shadow-[0_0_50px_rgba(34,197,94,0.3)] mx-auto"
-          />
-        </div>
-
-        <div>
-
-          <p className="text-green-500 uppercase tracking-[4px] text-sm mb-5">
-            About Me
-          </p>
-
-          <h2 className="text-5xl font-black leading-tight mb-6">
-            I build <span className="text-green-500">modern web applications</span> with clean design & powerful functionality.
-          </h2>
-
-          <p className="text-white/60 leading-relaxed text-lg">
-            I'm Ahmad Raza, a passionate MERN Stack Developer focused on creating responsive, fast, and user-friendly web applications.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-5 mt-10">
-
-            {[
-              {
-                title: 'Engineering',
-                desc: 'React, Node.js, TypeScript, REST APIs',
-              },
-
-              {
-                title: 'Design',
-                desc: 'Clean UI design, responsive layouts and smooth UX.',
-              },
-
-              {
-                title: 'Product',
-                desc: 'Focused on building impactful web products that solve real business problems.',
-              },
-
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-green-500 transition duration-300"
-              >
-                <h3 className="text-xl font-bold mb-3 text-green-500">
-                  {item.title}
-                </h3>
-
-                <p className="text-white/60 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section id="services" className="max-w-7xl mx-auto px-6 py-24">
-
-        <p className="text-green-500 uppercase tracking-[4px] text-sm mb-4 text-center">
-          Services
-        </p>
-
-        <h2 className="text-5xl font-black text-center mb-16">
-          What I <span className="text-green-500">Offer</span>
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8">
-
-          {[
-            {
-              title: 'Frontend Development',
-              desc: 'Modern responsive interfaces using React and Tailwind CSS.',
-            },
-
-            {
-              title: 'Backend Development',
-              desc: 'Scalable APIs and server-side applications using Node.js.',
-            },
-
-            {
-              title: 'Business Websites',
-              desc: 'Professional websites focused on trust and business growth.',
-            },
-
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-green-500 hover:-translate-y-2 transition duration-300"
-            >
-              <h3 className="text-2xl font-bold text-green-500 mb-4">
-                {item.title}
-              </h3>
-
-              <p className="text-white/60 leading-relaxed">
-                {item.desc}
-              </p>
             </div>
+
           ))}
+
         </div>
       </section>
 
-      {/* Tech Stack */}
-      <section id="skills" className="mt-16 text-center px-6">
+      {/* Skills */}
+      <section id="skills" className="mt-16 text-center px-6 pb-24">
 
         <p className="text-green-500 uppercase tracking-[4px] text-sm mb-4">
           Technologies
@@ -432,28 +378,28 @@ export default function PortfolioLandingPage() {
         </h3>
 
         <div className="flex flex-wrap justify-center gap-5">
-          {[
-            'React',
-            'Node.js',
-            'MongoDB',
-            'Express.js',
-            'Tailwind CSS',
-            'JavaScript',
-            'Firebase',
-            'GitHub',
-            'AWS',
-          ].map((tech, index) => (
+
+          {techStack.map((tech, index) => (
             <div
               key={index}
-              className="px-6 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-green-500 hover:text-green-400 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(34,197,94,0.3)] transition duration-300"
+              className="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-green-500 hover:text-green-400 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(34,197,94,0.3)] transition duration-300 flex items-center gap-3"
             >
-              {tech}
+
+              <span className="text-xl">
+                {tech.icon}
+              </span>
+
+              <span>
+                {tech.name}
+              </span>
+
             </div>
           ))}
+
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Contact */}
       <section id="contact" className="relative py-32 text-center px-6">
 
         <div className="absolute inset-0 bg-green-500/10 blur-[120px]"></div>
@@ -465,45 +411,64 @@ export default function PortfolioLandingPage() {
           </p>
 
           <h2 className="text-5xl md:text-7xl font-black leading-tight">
+
             Build something
             <br />
+
             <span className="text-green-500">
               extraordinary.
             </span>
+
           </h2>
 
           <p className="text-white/60 mt-8 text-lg">
             Available for freelance projects and full-time roles.
           </p>
 
-         <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmadraza.dev02@gmail.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mt-10 inline-flex items-center gap-3 bg-green-500 text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition duration-300 shadow-[0_0_40px_rgba(34,197,94,0.5)]"
->
-  {/* Mail Icon */}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={2}
-    stroke="currentColor"
-    className="w-5 h-5"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M21.75 7.5v9a2.25 2.25 0 01-2.25 2.25h-15A2.25 2.25 0 012.25 16.5v-9m19.5 0A2.25 2.25 0 0019.5 5.25h-15A2.25 2.25 0 002.25 7.5m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0l-7.5-4.615A2.25 2.25 0 012.25 7.743V7.5"
-    />
-  </svg>
+          {/* Contact Form */}
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="mt-10 space-y-5 max-w-xl mx-auto"
+          >
 
-  Let's Talk
-</a>
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Your Name"
+              required
+              className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-green-500"
+            />
 
-<p className="mt-4 text-white/50 text-sm">
-  ahmadraza.dev02@gmail.com
-</p>
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Your Email"
+              required
+              className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-green-500"
+            />
+
+            <textarea
+              rows="5"
+              name="message"
+              placeholder="Your Message"
+              required
+              className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-green-500"
+            />
+
+            <button
+              type="submit"
+              className="bg-green-500 text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition"
+            >
+              Send Message
+            </button>
+
+          </form>
+
+          <p className="mt-6 text-white/50 text-sm">
+            ahmadraza.dev02@gmail.com
+          </p>
+
         </div>
       </section>
 
@@ -515,6 +480,7 @@ export default function PortfolioLandingPage() {
           <a
             href="https://github.com/Ahmadraza49"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-green-400 transition"
           >
             GitHub
@@ -523,6 +489,7 @@ export default function PortfolioLandingPage() {
           <a
             href="https://linkedin.com/in/ahmad-raza-883176334"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-green-400 transition"
           >
             LinkedIn
@@ -534,6 +501,7 @@ export default function PortfolioLandingPage() {
           >
             Email
           </a>
+
         </div>
 
         <p className="text-white/40 text-sm">
@@ -543,24 +511,16 @@ export default function PortfolioLandingPage() {
         <p className="text-white/30 text-xs mt-2">
           Designed & Developed by Ahmad Raza
         </p>
+
       </footer>
 
-      {/* Animation */}
+      {/* Smooth Scroll */}
       <style>{`
         html {
           scroll-behavior: smooth;
         }
-       
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-
-          100% {
-            transform: translateX(-50%);
-          }
-        }
       `}</style>
+
     </div>
   )
 }
