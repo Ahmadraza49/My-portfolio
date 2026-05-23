@@ -39,7 +39,7 @@ export default function PortfolioLandingPage() {
       )
       .then(
         () => {
-          alert('Message Sent Successfully!')
+          alert('Thanks! Your message has been sent successfully.')
         },
         (error) => {
           alert('Failed To Send Message')
