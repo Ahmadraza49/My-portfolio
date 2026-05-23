@@ -1,7 +1,7 @@
 import food from './assets/food.png'
 import goods from './assets/goods.png'
 import blogify from './assets/blogify.png'
-import mypic from './assets/mypic.jpeg'
+import mypics from './assets/mypics.png'
 
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
@@ -194,22 +194,28 @@ export default function PortfolioLandingPage() {
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative group"
-          >
+  initial={{ opacity: 0, scale: 0.7 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8 }}
+  className="relative group"
+>
 
-            <div className="absolute inset-0 bg-green-500 blur-3xl opacity-30 rounded-full animate-pulse"></div>
+  {/* Glow */}
+  <div className="absolute inset-0 bg-green-500 blur-3xl opacity-30 rounded-full animate-pulse"></div>
 
-            <img
-              src={mypic}
-              alt="profile"
-              className="relative w-72 h-72 rounded-full object-cover border-4 border-green-500 shadow-[0_0_40px_rgba(34,197,94,0.7)] hover:scale-105 transition duration-500"
-            />
+  {/* Hire Badge */}
+ <div className="absolute bottom-3 right-0 z-20 bg-green-500 text-black text-xs font-bold px-4 py-2 rounded-full shadow-[0_0_25px_rgba(34,197,94,0.8)] animate-pulse">
+  Open to Work
+</div>
 
-          </motion.div>
+  {/* Image */}
+  <img
+    src={mypics}
+    alt="profile"
+    className="relative w-72 h-72 rounded-full object-cover border-4 border-green-500 shadow-[0_0_40px_rgba(34,197,94,0.7)] hover:scale-105 transition duration-500"
+  />
 
+</motion.div>
           <p className="mt-8 text-white/60">
             Let’s Build Something Amazing Together
           </p>
@@ -479,6 +485,96 @@ export default function PortfolioLandingPage() {
 
   </div>
 </section>
+     
+     {/* Testimonials */}
+<section className="max-w-7xl mx-auto px-6 py-28 text-center">
+
+  <p className="text-green-500 uppercase tracking-[4px] text-sm mb-4">
+    Testimonials
+  </p>
+
+  <h2 className="text-5xl font-black mb-14">
+    What Clients <span className="text-green-500">Say</span>
+  </h2>
+
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    {/* Testimonial 1 */}
+    <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md hover:border-green-500 hover:-translate-y-2 transition duration-300">
+
+      <div className="flex justify-center mb-4 text-green-400 text-2xl">
+        ★★★★★
+      </div>
+
+      <p className="text-white/60 leading-relaxed text-sm">
+        Ahmad delivered an amazing modern website with clean UI and smooth performance.
+        Communication was excellent throughout the project.
+      </p>
+
+      <div className="mt-6">
+        <h4 className="font-bold text-lg">
+          Ali Khan
+        </h4>
+
+        <p className="text-white/40 text-sm">
+          Business Owner
+        </p>
+      </div>
+
+    </div>
+
+    {/* Testimonial 2 */}
+    <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md hover:border-green-500 hover:-translate-y-2 transition duration-300">
+
+      <div className="flex justify-center mb-4 text-green-400 text-2xl">
+        ★★★★★
+      </div>
+
+      <p className="text-white/60 leading-relaxed text-sm">
+        Professional MERN stack developer with strong frontend and backend skills.
+        The project was completed before deadline.
+      </p>
+
+      <div className="mt-6">
+        <h4 className="font-bold text-lg">
+          Hamza Ahmed
+        </h4>
+
+        <p className="text-white/40 text-sm">
+          Startup Founder
+        </p>
+      </div>
+
+    </div>
+
+    {/* Testimonial 3 */}
+    <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md hover:border-green-500 hover:-translate-y-2 transition duration-300">
+
+      <div className="flex justify-center mb-4 text-green-400 text-2xl">
+        ★★★★★
+      </div>
+
+      <p className="text-white/60 leading-relaxed text-sm">
+        Highly recommended for responsive web applications and API integration.
+        Clean code structure and great attention to detail.
+      </p>
+
+      <div className="mt-6">
+        <h4 className="font-bold text-lg">
+          Umar Farooq
+        </h4>
+
+        <p className="text-white/40 text-sm">
+          Software Client
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 
       {/* Contact */}
       <section id="contact" className="relative py-32 text-center px-6">
