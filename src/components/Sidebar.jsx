@@ -6,6 +6,8 @@ export default function Sidebar() {
     <aside
       className="
         w-full
+        pt-20
+        lg:pt-0
         lg:w-80
         lg:fixed
         lg:left-6
