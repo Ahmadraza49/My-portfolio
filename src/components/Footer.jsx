@@ -15,15 +15,15 @@ Available For Freelance Projects
 
         <div className="flex gap-5 text-xl">
 
-          <a href="#">
+          <a href="https://github.com/Ahmadraza49">
             <FaGithub />
           </a>
 
-          <a href="#">
+          <a href="https://linkedin.com/in/ahmad-raza-883176334">
             <FaLinkedin />
           </a>
 
-          <a href="#">
+          <a href="https://web.facebook.com/ahmad.chaudhry.328468/">
             <FaFacebook />
           </a>
 
