@@ -44,9 +44,11 @@ export default function Services() {
               {service.desc}
             </p>
 
-            <button className="mt-6 text-green-400">
-              Learn More →
-            </button>
+ <div className="mt-6">
+  <span className="text-green-400 text-sm font-medium">
+    Available for Freelance
+  </span>
+</div>
           </div>
         ))}
 
