@@ -53,7 +53,7 @@ export default function Sidebar() {
 
           <div className="flex justify-between">
             <span className="text-white/60">Experience</span>
-            <span>1+ Year</span>
+            <span>2+ Year</span>
           </div>
         </div>
 
