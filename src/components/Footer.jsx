@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-center gap-5">
 
         <div>
-         © 2025 Ahmad Raza
+         © 2026 Ahmad Raza
 
 Full Stack MERN Developer
 Available For Freelance Projects

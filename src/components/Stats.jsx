@@ -1,10 +1,10 @@
 const stats = [
   {
-    number: "10+",
+    number: "4+",
     label: "Projects"
   },
   {
-    number: "5+",
+    number: "3+",
     label: "Clients"
   },
   {

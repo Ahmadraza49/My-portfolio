@@ -13,7 +13,7 @@ export default function Experience() {
       desc: "Built React.js applications, admin panels, business websites and modern UI/UX interfaces."
     },
     {
-      year: "2023 - 2024",
+      year: "2025 - 2026",
       title: "Learning & Practice",
       company: "MERN Stack Journey",
       desc: "Focused on React.js, Node.js, Express.js, MongoDB, GitHub and real-world project development."

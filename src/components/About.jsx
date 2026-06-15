@@ -119,7 +119,7 @@ export default function About() {
             <div className="bg-black/20 rounded-2xl p-5 text-center">
 
               <h4 className="text-3xl font-bold text-green-400">
-                10+
+                4+
               </h4>
 
               <p className="text-white/60">
@@ -131,7 +131,7 @@ export default function About() {
             <div className="bg-black/20 rounded-2xl p-5 text-center">
 
               <h4 className="text-3xl font-bold text-green-400">
-                5+
+                3+
               </h4>
 
               <p className="text-white/60">
