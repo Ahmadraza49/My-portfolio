@@ -37,7 +37,7 @@ export default function Navbar() {
 
             {/* Download CV Button */}
             <a
-              href="/AhmadRazaInfo.pdf"
+              href="/Ahmad_info.pdf"
               download
               className="ml-4 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-500 transition"
             >
@@ -70,7 +70,7 @@ export default function Navbar() {
 
             {/* Mobile CV Button */}
           <a
-  href="/AhmadRazaInfo.pdf"
+  href="/Ahmad_info.pdf"
   download
   onClick={() => setMenuOpen(false)}
   className="mt-2 px-4 py-2 bg-green-500 text-white rounded-lg text-center hover:bg-green-600 transition"
