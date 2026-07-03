@@ -1,6 +1,7 @@
 import blogify from "../assets/blogify.png";
 import goods from "../assets/goods.png";
 import food from "../assets/food.png";
+import chatify from "../assets/chatify.png";
 
 const projects = [
   {
@@ -10,6 +11,14 @@ const projects = [
     tech: ["React", "Node", "MongoDB"],
     live: "https://blog-delta-three-63.vercel.app/",
     github: "https://github.com/Ahmadraza49/blogify",
+  },
+  {
+    title: "Chatify",
+    image: chatify,
+    desc: "Real-time chat application with WebSocket integration.",
+    tech: ["React", "Nodejs", "Socket.IO"],
+    live: "https://chatify-app-plum.vercel.app/",
+    github: "https://github.com/Ahmadraza49/chatify-app",
   },
   {
     title: "Business Website",
