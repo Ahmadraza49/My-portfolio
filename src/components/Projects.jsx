@@ -2,8 +2,17 @@ import blogify from "../assets/blogify.png";
 import goods from "../assets/goods.png";
 import food from "../assets/food.png";
 import chatify from "../assets/chatify.png";
+import astore from "../assets/astore.png";
 
 const projects = [
+    {
+    title: "Ahmad Store",
+    image: astore,
+    desc: "Full-stack e-commerce application with AI integration.",
+    tech: ["React", "Node", "MongoDB"],
+    live: "https://ahmad-store.vercel.app/",
+    github: "https://github.com/Ahmadraza49/Ahmad-store",
+  },
   {
     title: "Blogify",
     image: blogify,
